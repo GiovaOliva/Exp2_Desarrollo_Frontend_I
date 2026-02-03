@@ -1,0 +1,138 @@
+/* =========================
+   AnimeShop + Bootstrap 5 (CSS liviano)
+   - No pisa el grid / container / row / col de Bootstrap
+========================= */
+
+:root {
+  --bg: #f5f5f5;
+  --text: #1f1f1f;
+  --primary: #1e1e2f;
+  --accent: #ff4d6d;
+  --surface: #fafafa;
+  --radius: 14px;
+}
+
+/* Fondo general */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Barra/hero oscuro reutilizable */
+.hero-bg {
+  background: var(--primary);
+}
+
+/* Evita que el sticky tape el contenido al navegar con #anchors */
+section, header, footer {
+  scroll-margin-top: 90px;
+}
+
+/* (Opcional pero recomendado) suaviza el scroll entre anclas */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ===== Carrusel promociones ===== */
+#promoCarousel {
+  max-height: 480px;
+}
+
+#promoCarousel .carousel-item {
+  height: 480px;
+}
+
+#promoCarousel img {
+  height: 100%;
+  object-fit: cover; /* 🔑 clave */
+}
+
+
+/* =========================
+   Categorías
+========================= */
+
+/* ===== Título de sección ===== */
+.section-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1e1e2f;
+  margin-bottom: 6px;
+}
+
+.section-subtitle {
+  color: #6c757d; /* gris Bootstrap */
+  font-size: 15px;
+}
+
+
+.category-title {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 800;
+}
+
+.category-underline {
+  width: 46px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 999px;
+}
+
+/* =========================
+   Cards de productos
+========================= */
+.product-img {
+  height: 210px;
+  object-fit: contain;
+  background: var(--surface);
+}
+
+/* Para que la imagen se vea “contenida” y bonita dentro de la card */
+.product-img-wrap {
+  padding: 12px;
+}
+
+/* Hover suave (no afecta el layout de bootstrap) */
+.card.product-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: var(--radius);
+}
+
+.card.product-card:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   Navbar sticky: asegurar que quede por encima
+========================= */
+.navbar.sticky-top {
+  z-index: 1030; /* estándar de Bootstrap para barras */
+}
+
+/* =========================
+   Accesibilidad: foco visible en links de nav/footer
+========================= */
+.navbar a:focus-visible,
+footer a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+
+/* =========================
+   Responsive adjustments
+========================= */                
+@media (max-width: 768px) {
+  #promoCarousel,
+  #promoCarousel .carousel-item {
+    height: 300px;
+  }
+}
