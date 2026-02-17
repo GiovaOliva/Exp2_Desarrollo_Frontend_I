@@ -42,10 +42,40 @@ footer {
 }
 
 /* =========================
-   3) Navbar / Sticky
+   3) Navbar / Sticky / Layout responsive
 ========================= */
 .navbar.sticky-top {
   z-index: 1030; /* estándar Bootstrap para barras */
+}
+
+/* Contenedor acciones (buscar + carrito) */
+.navbar-actions {
+  width: 100%;
+}
+
+/* En móvil: todo full-width y ordenado */
+@media (max-width: 991.98px) {
+  .navbar-actions,
+  #searchForm {
+    width: 100%;
+  }
+
+  /* asegura que botones del input-group no queden enanos */
+  .navbar-actions .input-group > .btn {
+    min-width: 44px;
+  }
+}
+
+/* En escritorio: buscador con ancho “pro” y acciones alineadas */
+@media (min-width: 992px) {
+  .navbar-actions {
+    width: auto;
+    align-items: center;
+  }
+
+  #searchForm {
+    width: 360px;
+  }
 }
 
 /* =========================
